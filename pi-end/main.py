@@ -17,10 +17,10 @@ localpath='t.png'
 
 frameCount = 0
 #while frameCount < FRAMES:
-    os.system("raspistill -o t.png")
-    #frameCount += 1
-    blob.upload_from_filename(localpath)
-    #time.sleep(TIMEBETWEEN - 30)
+os.system("raspistill -o t.png")
+#frameCount += 1
+blob.upload_from_filename(localpath)
+#time.sleep(TIMEBETWEEN - 30)
 
 
 
