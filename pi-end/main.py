@@ -4,8 +4,8 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import storage
 
-#FRAMES = 1000
-#TIMEBETWEEN = 30
+FRAMES = 5
+TIMEBETWEEN = 60
 
 cred = credentials.Certificate('serviceacckey.json')
 firebase_admin.initialize_app(cred, {
@@ -16,11 +16,11 @@ blob = bucket.blob('t.png')
 localpath='t.png'
 
 frameCount = 0
-#while frameCount < FRAMES:
-os.system("raspistill -o t.png")
-#frameCount += 1
-blob.upload_from_filename(localpath)
-#time.sleep(TIMEBETWEEN - 30)
+while frameCount < FRAMES:
+    os.system("raspistill -o t.png")
+    frameCount += 1
+    blob.upload_from_filename(localpath)
+    time.sleep(TIMEBETWEEN)
 
 
 
