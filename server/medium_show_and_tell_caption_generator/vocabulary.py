@@ -5,7 +5,6 @@ from __future__ import print_function
 import logging
 import os
 
-
 class Vocabulary(object):
     """Vocabulary class for mapping words to ids"""
 

@@ -9,6 +9,7 @@ import time
 
 import tensorflow as tf
 
+
 from medium_show_and_tell_caption_generator.caption_generator import CaptionGenerator
 from medium_show_and_tell_caption_generator.model import ShowAndTellModel
 from medium_show_and_tell_caption_generator.vocabulary import Vocabulary
@@ -43,14 +44,18 @@ def main(_):
                 # Ignore begin and end tokens <S> and </S>.
                 sentence = [vocab.id_to_token(w) for w in caption.sentence[1:-1]]
                 sentence = " ".join(sentence)
-                
+                with open('test.txt',"w") as f:
+                    f.write(sentence)
+                f.close()
+
                 print("(p=%f)" % ( math.exp(caption.logprob)))
                 print(sentence)
                 if "clock" in sentence:
                     timeNow = time.strftime("%H:%M:%S")
 
                     print("The time now is :",timeNow)
-
+    from putcaption import initCaption
+    initCaption(sentence)
 
 def _load_filenames():
     filenames = []

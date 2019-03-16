@@ -20,7 +20,6 @@ from __future__ import print_function
 
 import heapq
 import math
-
 import numpy as np
 
 

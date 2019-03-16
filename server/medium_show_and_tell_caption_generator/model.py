@@ -3,7 +3,6 @@ import os
 
 import tensorflow as tf
 
-
 class ShowAndTellModel(object):
     def __init__(self, model_path):
         self._model_path = model_path
